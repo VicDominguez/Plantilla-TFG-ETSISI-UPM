@@ -2,7 +2,7 @@
 
 ___En este repositorio...___
 
-Plantilla LaTeX para la realización del Trabajo Fin de Grado en la Escuela Técnica Superior de Ingenieros de Sistemas Informáticos (Universidad Politécnica de Madrid). Está diriga a las personas noveles con LaTeX o que quieren ahorrarse tiempo a la hora de realizar su memoria. Consta de los siguientes elementos:
+Plantilla LaTeX para la realización del Trabajo Fin de Grado en la Escuela Técnica Superior de Ingenieros de Sistemas Informáticos (Universidad Politécnica de Madrid). Está dirigida a las personas noveles con LaTeX o que quieren ahorrarse tiempo a la hora de realizar su memoria. Consta de los siguientes elementos:
 
  + Doble portada (azul y blanca)
  + Sección de agradecimientos, resumen y abstract ya incorporados, junto a la numeración romana de las mismas
