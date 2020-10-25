@@ -1,0 +1,186 @@
+%Definimos la clase del documento y cargamos las librerías
+\documentclass[a4paper]{report}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+%paquetes para la portada azul
+\usepackage{afterpage}
+\usepackage{xcolor}
+%Para tener los elementos de texto en español
+\usepackage[spanish]{babel}
+%Hipervinculos para todo lo útil
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+%evitamos que rompa las palabras
+\usepackage[none]{hyphenat}
+%añadir ficheros externos
+\usepackage{subfiles}
+%soporte para anexos
+\usepackage{appendix}
+%importacion automatica de codigo en los anexos
+\usepackage{minted}
+%paquetes para figuras
+\usepackage{caption}
+\usepackage{subcaption}
+
+%Encabezados bonitos
+\pagestyle{headings}
+
+%paquete para poner la bibliografia en la table of contents
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+
+%Cambiamos el espacio en blanco enorme que por defecto hay en las páginas inicio de capítulo
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+%para crear subsubsubsection
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%definimos el azul celeste
+\definecolor{AzulCeleste}{RGB}{31, 130, 192}
+
+%Ruta en la que pondremos las imágenes para el documento
+\graphicspath{ {imagenes/} }
+%Redifinimos el nombre que asigna babel spanish a las tablas (cuadro) a tabla
+\renewcommand{\spanishtablename}{Tabla}
+\renewcommand{\spanishlisttablename}{Índice de tablas}
+\renewcommand{\spanishcontentsname}{Índice}
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
+
+% Definimos el comando de página en blanco
+\newcommand\paginablanco{%
+    \null
+    \thispagestyle{empty}%
+    \newpage}
+
+% Definimos el comando de página en blanco sin avanzar numeracion
+\newcommand\paginablancosin{%
+    \paginablanco{}
+    \addtocounter{page}{-1}}
+
+%mayor anchura en las tablas
+\renewcommand{\arraystretch}{1.5}
+%mayor ancuhura en las fracciones
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+%coamdno escribir TFG
+\newcommand{\tfg}{Trabajo Fin de Grado }
+
+
+% Comenzamos el documento
+\begin{document}
+% Hacemos la portada
+\begin{titlepage}
+\pagecolor{AzulCeleste}\afterpage{\nopagecolor}
+
+\begin{figure}[!htb]
+   \begin{minipage}{0.5\textwidth}
+     \centering
+     \includegraphics[width=1\textwidth]{logo_upm_bn.png}
+   \end{minipage}\hfill
+   \begin{minipage}{0.5\textwidth}
+     \centering
+     \includegraphics[width=1\textwidth]{logo_etsisi_bn.png}
+   \end{minipage}
+\end{figure}
+
+%{\includegraphics[width=0.5\textwidth]{logo_etsisi_bn.png}\par}
+{\bfseries\Huge \textcolor{white}{Título del proyecto} \par}
+\vfill
+{\Large \textcolor{white}{Proyecto Fin de Grado} \par}
+\vfill
+{\Large \textcolor{white}{Grado en XXXX} \par}
+\vfill
+{\Large \textcolor{white}{Autor:} \par}
+{\Large \textcolor{white}{Nombre Apellidos} \par}
+\vfill
+{\Large \textcolor{white}{Tutores:} \par}
+{\Large \textcolor{white}{Nombre Apellidos} \par}
+{\Large \textcolor{white}{Nombre Apellidos} \par}
+\vfill
+{\Large \textcolor{white}{Fecha} \par}
+\newpage
+
+\thispagestyle{empty}
+\centering % Para centrar la portada
+% Para entender los siguientes comandos, consúltese los siguientes enlaces
+% https://manualdelatex.com/tutoriales/crear-una-portada
+% https://manualdelatex.com/tutoriales/tipo-de-letra
+{\scshape\Large  Universidad Politécnica de Madrid \par}
+{\scshape\Large Escuela Técnica Superior de Ingeniería de Sistemas Informáticos \par}
+\vfill
+{\includegraphics[width=1\textwidth]{logo_etsisi.png}\par}
+\vfill
+{\bfseries\LARGE Título del proyecto \par}
+\vfill
+{\Large Proyecto Fin de Grado \par}
+\vfill
+{\Large Grado en XXXX \par}
+\vfill
+{\Large Curso académico xxxx-xxxx \par}
+\vfill
+{\Large Autor: \par}
+{\Large Nombre Apellidos \par}
+\vfill
+{\Large Tutores: \par}
+{\Large Nombre Apellidos \par}
+{\Large Nombre Apellidos \par}
+
+\end{titlepage}
+
+\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+
+% Agradecimientos
+\chapter*{}
+\thispagestyle{empty}
+\addcontentsline{toc}{section}{Agradecimientos} % si queremos que aparezca en el índice
+\begin{flushright}
+\textit{Tus agradecimientos aqui}
+\end{flushright}
+
+
+\chapter*{Resumen} % si no queremos que añada la palabra "Capitulo"
+\addcontentsline{toc}{section}{Resumen} % si queremos que aparezca en el índice
+Por realizar
+
+\chapter*{Abstract} % si no queremos que añada la palabra "Capitulo"
+\addcontentsline{toc}{section}{Abstract} % si queremos que aparezca en el índice
+Por realizar
+
+\tableofcontents
+\newpage
+\listoftables %ver si hay alguna tabla al final
+\newpage
+\listoffigures
+\newpage
+
+\paginablanco{}
+
+\chapter{Introducción}
+\pagenumbering{arabic}
+\subfile{secciones/introduccion}
+\chapter{Estado del arte}
+\subfile{secciones/estado_arte}
+\chapter{Desarrollo del proyecto}
+\subfile{secciones/desarrollo}
+\chapter{Resultados}
+\subfile{secciones/resultados}
+\chapter{Conclusiones y trabajos futuros}
+\subfile{secciones/conclusiones}
+\newpage
+\subfile{secciones/referencias}
+
+\appendix
+\clearpage
+\addappheadtotoc
+\appendixpage
+
+%tus anesos aqui
+
+\end{document}
