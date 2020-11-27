@@ -10,4 +10,4 @@ Plantilla LaTeX para la realización del Trabajo Fin de Grado en la Escuela Téc
  + Separación en ficheros .tex para mejorar la escritura del documento.
  + Paquetes habituales ya cargados, como _spanish_, _minted_ (para la incorporación de código) y _graphicx_, entre otros.
  + Ejemplo de anexo con código.
-
+ + Carpeta demo con el pdf generado por la plantilla, imágenes de las secciones más importantes del pdf y dos ejemplos de impresión real (portada y código).
