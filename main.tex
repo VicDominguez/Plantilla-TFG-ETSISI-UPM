@@ -41,8 +41,8 @@
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-%definimos el azul celeste
-\definecolor{AzulCeleste}{RGB}{31, 130, 192}
+%definimos el azul de la portada
+\definecolor{AzulPortada}{RGB}{135, 206, 250}
 
 %Ruta en la que pondremos las imágenes para el documento
 \graphicspath{ {imagenes/} }
@@ -77,34 +77,34 @@
 \begin{document}
 % Hacemos la portada
 \begin{titlepage}
-\pagecolor{AzulCeleste}\afterpage{\nopagecolor}
+\pagecolor{AzulPortada}\afterpage{\nopagecolor}
 
 \begin{figure}[!htb]
-   \begin{minipage}{0.5\textwidth}
+   \begin{minipage}{0.45\textwidth}
      \centering
-     \includegraphics[width=1\textwidth]{logo_upm_bn.png}
+     \includegraphics[width=1\textwidth]{logo_upm.png}
    \end{minipage}\hfill
-   \begin{minipage}{0.5\textwidth}
+   \begin{minipage}{0.45\textwidth}
      \centering
-     \includegraphics[width=1\textwidth]{logo_etsisi_bn.png}
+     \includegraphics[width=1\textwidth]{logo_etsisi.png}
    \end{minipage}
 \end{figure}
 
 %{\includegraphics[width=0.5\textwidth]{logo_etsisi_bn.png}\par}
-{\bfseries\Huge \textcolor{white}{Título del proyecto} \par}
+{\bfseries\Huge \textcolor{black}{Título del proyecto} \par}
 \vfill
-{\Large \textcolor{white}{Proyecto Fin de Grado} \par}
+{\huge \textcolor{black}{Proyecto Fin de Grado} \par}
 \vfill
-{\Large \textcolor{white}{Grado en XXXX} \par}
+{\huge \textcolor{black}{Grado en XXXX} \par}
 \vfill
-{\Large \textcolor{white}{Autor:} \par}
-{\Large \textcolor{white}{Nombre Apellidos} \par}
+{\huge \textcolor{black}{Autor:} \par}
+{\huge \textcolor{black}{Nombre Apellidos} \par}
 \vfill
-{\Large \textcolor{white}{Tutores:} \par}
-{\Large \textcolor{white}{Nombre Apellidos} \par}
-{\Large \textcolor{white}{Nombre Apellidos} \par}
+{\huge \textcolor{black}{Tutores:} \par}
+{\huge \textcolor{black}{Nombre Apellidos} \par}
+{\huge \textcolor{black}{Nombre Apellidos} \par}
 \vfill
-{\Large \textcolor{white}{Fecha} \par}
+{\huge \textcolor{black}{Mes Año} \par}
 \newpage
 
 \thispagestyle{empty}
@@ -181,6 +181,7 @@ Por realizar
 \addappheadtotoc
 \appendixpage
 
-%tus anesos aqui
+\chapter{Código fuente del proyecto}
+\subfile{anexos/codigo}
 
 \end{document}
